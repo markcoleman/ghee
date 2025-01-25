@@ -1,0 +1,43 @@
+<div *ngIf="posts.length > 0; else noPosts" class="blog-container">
+    <h1 class="blog-title">Latest Blog Posts</h1>
+  
+    <div *ngFor="let post of posts" class="blog-post">
+      <!-- Card Structure -->
+      <div class="post-card">
+        <!-- Featured Image -->
+        <div class="image-container">
+          <img [src]="post.featured_image" [alt]="post.featured_image_alt || post.title" class="featured-image" />
+        </div>
+  
+        <!-- Blog Content -->
+        <div class="content">
+          <!-- Title -->
+          <h2 class="post-title">{{ post.title }}</h2>
+  
+          <!-- Author and Published Date -->
+          <p class="meta">
+            By <span class="author">{{ post.author.first_name }} {{ post.author.last_name }}</span> |
+            <span class="date">{{ post.published | date: 'mediumDate' }}</span>
+          </p>
+  
+          <!-- Categories -->
+          <p *ngIf="post.categories?.length" class="categories">
+            <span *ngFor="let category of post.categories; let last = last">
+              <span class="category">{{ category.name }}</span><span *ngIf="!last">, </span>
+            </span>
+          </p>
+  
+          <!-- Blog Body (Trimmed Content with "Read More") -->
+          <div class="body">
+            <p [innerHTML]="post.body | slice: 0:300"></p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Fallback for No Posts -->
+  <ng-template #noPosts>
+    <p class="no-posts">No blog posts available.</p>
+  </ng-template>

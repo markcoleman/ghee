@@ -1,0 +1,47 @@
+/* Blog container styling */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .blog-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  /* Blog post card styling */
+  .post-card {
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Author and date styling */
+  .author {
+    color: #3f51b5;
+    font-weight: bold;
+  }
+  
+  .date {
+    font-style: italic;
+  }
+  
+  /* Categories styling */
+  mat-chip {
+    margin-right: 4px;
+  }
+  
+  /* Fallback for no posts */
+  .no-posts {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    margin-top: 40px;
+  }
