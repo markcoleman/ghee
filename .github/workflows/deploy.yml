@@ -31,7 +31,10 @@ jobs:
 
       # Step 4: Build the Angular project
       - name: Build Angular Project
-        run: npm run build --prod
+        run: |
+          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)
+          echo "Repository Name: $REPO_NAME"
+          npm run build --prod --base-href "/$REPO_NAME/"
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
