@@ -1,0 +1,6 @@
+{
+  "routes": {
+    "/ghee": {},
+    "/ghee/blog": {}
+  }
+}
