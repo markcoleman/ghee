@@ -35,6 +35,14 @@
             "styles": [],
             "scripts": []
           }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "ghee:build",
+            "host": "localhost",
+            "port": 4200
+          }
         }
       }
     }
